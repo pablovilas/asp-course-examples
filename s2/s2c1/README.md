@@ -73,6 +73,7 @@ Nginx es un servidor web/proxy inverso ligero de alto rendimiento muy popular, e
 * ```docker rm <container-name/container-id>``` Borra el contenedor especificado
 * ```docker image ls``` Lista las imágenes presentes en el sistema
 * ```docker rmi <image-name/image-id>``` Borra la imagen especificada
+* ```docker system prune -a``` Borra todas las imágenes, volúmenes y contenedores sin usar
 
 
 
