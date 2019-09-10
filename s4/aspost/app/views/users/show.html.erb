@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <p id="notice"><%= notice %></p>
+            <h1>Mostrar usuario</h1>
+            <%= render 'form', user: @user, readonly: true %>
+            <%= link_to 'Editar', edit_user_path(@user) %> |
+            <%= link_to 'Atras', users_path %>
+        </div>
+    </div>
+</div>
