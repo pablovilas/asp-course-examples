@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  address: MyString
-  phone: MyString
-  email: MyString
+  name: Peter
+  address: Av. 18 de Julio 1352 
+  phone: 09912350
+  email: notvalidemail
 
 two:
-  name: MyString
-  address: MyString
-  phone: MyString
-  email: MyString
+  name: Peter
+  address: Av. 18 de Julio 1352
+  phone: +59891342546
+  email: valid.email@example.com
