@@ -13,8 +13,11 @@ A continuación se muestra un diagrama de clases de ejemplo:
 ![class_diagram](img/class_diagram.png)
 
 **Order:** Representa una compra con su respectiva fecha de compra y total.
+
 **OrderLine:** Son las lineas (o detalles) de la compra. Es decir que productos y cantidades de los mismos fueron adquiridos.
+
 **Product:** Representa al producto que está en venta. De los productos conocemos su nombre y precio.
+
 **Customer:** Es el cliente que realiza la compra. De los clientes sabemos su nombre, teléfono, email y dirección.
 
 ### Validaciones
@@ -56,6 +59,7 @@ Con la finalidad de mantener consistencia en los datos ingresados se desea agreg
     Ejemplo:
 
     ```rails generate model product name:string price:number```
+    
     ```rails generate migration AddProductToOrderLine product:references```
 3. Agregar las validaciones solicitadas.
 4. Realizar test unitario de los modelos con al menos un caso de éxito y un caso de falla para  cada validación.
