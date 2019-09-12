@@ -1,5 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 valid_drink:
+  id: 1
   name: Cola 600ml
   price: 10 
