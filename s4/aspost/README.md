@@ -28,7 +28,7 @@ Puede partir de este ejemplo y agregar la funcionalidad solicitada.
 
 ### Requerimientos no funcionales
 
-* La aplicación tiene que estar desplegada en un servicio Paas, preferentemente Heroku.
-* La base de datos debe ser postgres. En ambiente de desarrollo se recomienda utilizar docker, en producción puede utilizar una base gestionada por el proveedor. 
-* Toda información sensible debe estar como variables de entorno. Se sugiere utilizar la gema *dotenv* para facilitar el desarrollo.
-* Se debe considerar la observabilidad del sisteme por medio de logs los cuales deben estar visibles desde algún servicio para cualquier eventualidad. Puede utilizar loggly, insightops, etc.
+* La aplicación tiene que estar desplegada en un servicio Paas, preferentemente [Heroku](https://www.heroku.com/home). Puede consultar la lista de comandos mas utilizados [aquí](https://devhints.io/heroku).
+* La base de datos debe ser postgres. En ambiente de desarrollo se recomienda utilizar [docker](https://hub.docker.com/_/postgres), en producción puede utilizar una base [gestionada](https://elements.heroku.com/addons/heroku-postgresql) por el proveedor. 
+* Toda información sensible debe estar como variables de entorno. Se sugiere utilizar la gema [dotenv](https://github.com/bkeepers/dotenv) para facilitar el desarrollo.
+* Se debe considerar la observabilidad del sistema por medio de logs los cuales deben estar visibles desde algún servicio para cualquier eventualidad. Puede utilizar [loggly](https://www.loggly.com), [insightops](https://insight.rapid7.com/login), etc.
