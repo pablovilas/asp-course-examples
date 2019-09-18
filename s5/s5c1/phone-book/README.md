@@ -66,3 +66,35 @@ Editar ```app/views/companies/index.html.erb``` y agregar información de la can
  </tbody>
 </table>
 ```
+luego editar ```app/views/companies/show.html.erb```:
+
+```html
+<p id=”notice”><%= notice %></p>
+<p>
+ <strong>Name:</strong>
+ <%= @company.name %>
+</p>
+<% if @company.employees.any? %>
+<h1>Employees</h1>
+<table>
+ <thead>
+  <tr>
+    <th>Last name</th>
+    <th>First name</th>
+    <th>Phone number</th>
+  </tr>
+ </thead>
+ <tbody>
+  <% @company.employees.each do |employee| %>
+    <tr>
+      <td><%= employee.last_name %></td>
+      <td><%= employee.first_name %></td>
+      <td><%= employee.phone_number %></td>
+    </tr>
+  <% end %>
+ </tbody>
+</table>
+<% end %>
+<%= link_to ‘Edit’, edit_company_path(@company) %> |
+<%= link_to ‘Back’, companies_path %>
+```
