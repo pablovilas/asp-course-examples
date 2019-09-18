@@ -120,3 +120,8 @@ en el archivo *seeds.rb* creamos datos de ejemplo:
  end
 end
 ```
+luego ejecutamos ```rails db:seed```
+
+### Consigna
+
+En base al comportamiento observado en el ejemplo anterior y los tiempos de respuesta siguiendo la guía de [caching en rails](https://guides.rubyonrails.org/caching_with_rails.html) aplique distintas técnicas incorporadas por rails y compare resultados.
