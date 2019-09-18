@@ -10,7 +10,7 @@ El objetivo de este práctico es realizar una aplicación de ejemplo con caching
 
 Crear el proyecto y los scaffold para *company* y *employee*
 
-````
+````bash
 rails new phone-book
 rails generate scaffold company name
 rails generate scaffold employee company:references last_name first_name phone_number
@@ -19,7 +19,7 @@ rails db:migrate
 
 Agregar las validaciones a los modelos
 
-````
+````ruby
 class Company < ApplicationRecord
   
   validates :name, presence: true, uniqueness: true
@@ -44,3 +44,25 @@ class Employee < ApplicationRecord
   
 end
 ````
+
+Editar ```app/views/companies/index.html.erb``` y agregar información de la cantidad de empleados ejemplo:
+
+```html
+<table>
+ <thead>
+  <tr>
+    <th>Name</th>
+    <th>Number of employees</th>
+    <th colspan=”3"></th>
+  </tr>
+ </thead>
+ <tbody>
+  <% @companies.each do |company| %>
+    <tr>
+      <td><%= company.name %></td>
+      <td><%= company.employees.count %></td>
+    </tr>
+  <% end %>
+ </tbody>
+</table>
+```
