@@ -98,3 +98,25 @@ luego editar ```app/views/companies/show.html.erb```:
 <%= link_to ‘Edit’, edit_company_path(@company) %> |
 <%= link_to ‘Back’, companies_path %>
 ```
+Luego de completar las vistas vamos a proceder a agregar ejemplos, para eso vamos a utilizar la gema *faker*:
+
+```
+gem 'faker'
+```
+
+en el archivo *seeds.rb* creamos datos de ejemplo:
+
+```ruby
+100.times do
+ company = Company.new(:name => Faker::Company.name)
+ if company.save
+  SecureRandom.random_number(500).times do
+    company.employees.create(
+      first_name: Faker::Name.first_name,
+      last_name: Faker::Name.last_name,
+      phone_number: Faker::PhoneNumber.phone_number
+    )
+  end
+ end
+end
+```
