@@ -1,5 +1,10 @@
 <h1>Hola <%= current_user.email %>!</h1>
 <br>
+<ul>
+    <% @users.each do |user| %>
+        <li><%= user.email %></li>
+    <% end %>
+</ul>
 <% if user_signed_in? %>
     <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
 <% else %>

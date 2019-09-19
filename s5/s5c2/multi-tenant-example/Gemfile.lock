@@ -56,6 +56,9 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.1, >= 2.1.8)
+    acts_as_tenant (0.4.4)
+      rails (>= 4.0)
+      request_store (>= 1.0.5)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     bcrypt (3.1.13)
@@ -149,6 +152,8 @@ GEM
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     regexp_parser (1.6.0)
+    request_store (1.4.1)
+      rack (>= 1.4)
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -214,6 +219,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_tenant
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
