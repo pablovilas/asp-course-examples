@@ -1,24 +1,22 @@
-# README
+# Arquitectura de Software en la Práctica
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Multi-tenancy en rails
 
-Things you may want to cover:
+La siguiente aplicación es un ejemplo de multi-tenancy en rails. Para esto nos basamos en en siguiente modelo:
 
-* Ruby version
+* **Usuarios**: mail, contraseña y organización a la que pertenece
+* **Organización**: nombre
 
-* System dependencies
+## Gemas utilizadas
 
-* Configuration
+* Gestión de usuarios vía [devise](https://github.com/plataformatec/devise)
+* Multi-tenancy con [act_as_tenant](https://github.com/ErwinM/acts_as_tenant). Aunque es posible utilizar [apartment](https://github.com/influitive/apartment)
 
-* Database creation
+## Procedimiento
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Creamos el modelo de organización
+2. Incluimos *devise* en el proyecto, copiando las vistas y controladores ya que necesitamos incluir informacion de la organización.
+3. Enlazamos los usuarios generados con *devise* y las organizaciones
+4. Creamos organizaciones de ejemplo como *seeds*
+5. Verificamos que podemos registrar usuarios y estos son almacenado con su respectiva organización
+6. Incluimos *act_as_tenant* y realizamos las configuraciones pertinentes
