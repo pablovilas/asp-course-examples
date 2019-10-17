@@ -1,0 +1,29 @@
+{
+  "name": "country-time-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "koa": "^2.6.1",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^3.2.0",
+    "koa-router": "^7.4.0",
+    "moment-timezone": "^0.5.21"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/pablovilas/country-time-service.git"
+  },
+  "engines": {
+    "node": "8.11.4",
+    "npm": "6.4.1"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/pablovilas/country-time-service#readme"
+}

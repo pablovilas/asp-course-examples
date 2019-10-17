@@ -30,3 +30,15 @@
 **/yarn-error.log
 **yarn-debug.log*
 **.yarn-integrity
+
+# Ignore java projects files
+
+**/.gradle
+**/.idea
+**/.settings
+**/bin
+**/build
+
+# Ignore node.js projects files
+
+**/node_modules
