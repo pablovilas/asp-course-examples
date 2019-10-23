@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
+  database:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - "./dockercompose/mongo/:/data/db"

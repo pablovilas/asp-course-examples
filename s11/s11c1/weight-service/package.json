@@ -1,0 +1,23 @@
+{
+    "name": "weight-service",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js"
+    },
+    "dependencies": {
+      "mongoose": "5.7.6",
+      "config": "^3.1.0",
+      "koa": "^2.7.0",
+      "koa-bodyparser": "^4.2.1",
+      "koa-json": "^2.0.2",
+      "koa-logger": "^3.2.0",
+      "koa-router": "^7.4.0",
+      "minimist": "^1.2.0"
+    },
+    "devDependencies": {
+      "jest": "^24.8.0",
+      "supertest": "^4.0.2"
+    }
+  }
