@@ -1,0 +1,8 @@
+source 'https://rubygems.org'
+
+gem 'faraday'
+gem 'faraday_middleware'
+gem 'zipkin-tracer'
+gem 'newrelic_rpm'
+gem 'sinatra'
+gem 'sinatra-contrib'

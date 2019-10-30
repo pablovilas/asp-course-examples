@@ -1,0 +1,15 @@
+common: &default_settings
+  license_key: 7f94602d00099977beec7b048d52f75cfe115d97
+  app_name: order-service
+  log_level: info
+development:
+  <<: *default_settings
+  app_name: order-service (Development)
+test:
+  <<: *default_settings
+  monitor_mode: false
+staging:
+  <<: *default_settings
+  app_name: order-service (Staging)
+production:
+  <<: *default_settings
