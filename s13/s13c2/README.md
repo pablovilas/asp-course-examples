@@ -26,6 +26,9 @@ La saga a implementar es el proceso de una órden de compra:
 * Puede elegir libremente entre cualquier forma de implementación:
     * **Events/Choreography**: Sin coordinacion central, cada servicio produce los eventos y procesa eventos de los demás servicios y decide si debe tomar una acción o no.
     * **Command/Orchestration**: Existe un servicio que coordina la saga y secuencia la lógica del negocio.
+* En esta oportunidad vamos a utilizar un message broker (RabbitMQ) para implementar la saga
+    ```docker run -d --hostname rabbitmq --name rabbitmq -p 15672:15672 -p 5672:5672 -p 5671:5671 rabbitmq:3-management```
+
 
 #### Ejemplo de proceso con Events/Choreography
 
