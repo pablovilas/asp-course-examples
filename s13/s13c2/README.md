@@ -26,3 +26,12 @@ La saga a implementar es el proceso de una órden de compra:
 * Puede elegir libremente entre cualquier forma de implementación:
     * **Events/Choreography**: Sin coordinacion central, cada servicio produce los eventos y procesa eventos de los demás servicios y decide si debe tomar una acción o no.
     * **Command/Orchestration**: Existe un servicio que coordina la saga y secuencia la lógica del negocio.
+
+#### Ejemplo de proceso con Events/Choreography
+
+1. *order-service* guarda una nueva órden, pone el estado como *pending* y dispara el evento *ORDER_CREATED*
+2. *payment-service* escucha por el evento *ORDER_CREATED* realiza el cobro al usuario y publica el evento *BILLED_ORDER*
+3. *stock-service* escucha por el evento *BILLED_ORDER* actualiza el stock y publica el evento *ORDER_PREPARED*
+4. Por último *order-service* escucha por los eventos *ORDER_PREPARED* actualiza el estado a *preparing* y se finaliza la saga
+
+**Nota**: Considerar también casos alternativos, ejemplo: PRODUCT_OUT_OF_STOCK, USER_NO_FOUNDS
