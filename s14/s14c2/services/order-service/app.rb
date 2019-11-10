@@ -3,7 +3,6 @@ require 'sinatra/contrib'
 require 'faraday'
 require 'faraday_middleware'
 require 'rack'
-require 'diplomat'
 
 class App < Sinatra::Base
 
@@ -13,12 +12,7 @@ class App < Sinatra::Base
         { id: 3, user: { name: 'Susan', address: 'Av. Street 200' }, products: [1, 4] }
     ]
     
-    Diplomat.configure do |config|
-        config.url = "http://host.docker.internal:8500"
-    end
-
-    product_service = Diplomat::Service.get('product-service')
-    conn = Faraday.new(url: "http://#{product_service.ServiceAddress}:#{product_service.ServicePort}") do |faraday|
+    conn = Faraday.new(url: "http://host.docker.internal:9001") do |faraday|
         faraday.use FaradayMiddleware::ParseJson
         faraday.adapter Faraday.default_adapter
         faraday.response :json, parser_options: { symbolize_names: true }
