@@ -1,0 +1,11 @@
+{
+    "ID": "order-service",
+    "Name": "order-service",
+    "Address": "host.docker.internal",
+    "Port": 9000,
+    "check": {
+      "http": "http://host.docker.internal:9000/health",
+      "interval": "10s",
+      "timeout": "1s"
+    }
+}

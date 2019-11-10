@@ -1,0 +1,11 @@
+{
+    "ID": "product-service",
+    "Name": "product-service",
+    "Address": "host.docker.internal",
+    "Port": 9001,
+    "check": {
+      "http": "http://host.docker.internal:9001/health",
+      "interval": "10s",
+      "timeout": "1s"
+    }
+}

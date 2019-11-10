@@ -1,0 +1,14 @@
+version: '3'
+services:
+  order:
+    build: order-service/.
+    ports:
+      - "9000:9292"
+  product:
+    build: product-service/.
+    ports:
+      - "9001:9292"
+networks:
+  default:
+    external:
+      name: asp-net      
