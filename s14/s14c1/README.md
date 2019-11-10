@@ -21,6 +21,7 @@ Utilizaremos dos micro-servicios de ejemplo que serán expuestos a través de la
     * GET: */products/:id*
 
 
+
 ### Procedimiento
 
 * [Kong](kong/README.md)

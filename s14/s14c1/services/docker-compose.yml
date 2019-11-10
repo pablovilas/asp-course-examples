@@ -4,10 +4,18 @@ services:
     build: order-service/.
     ports:
       - "9000:9292"
+    labels:
+      - traefik.http.routers.order-service.rule=Host(`host.docker.internal:9000`)
+      - traefik.http.routers.order-service.rule=PathPrefix(`/orders`)
+      - traefik.docker.network=kong-net
   product:
     build: product-service/.
     ports:
       - "9001:9292"
+    labels:
+      - traefik.http.routers.product-service.rule=Host(`host.docker.internal:9001`)
+      - traefik.http.routers.product-service.rule=PathPrefix(`/products`)
+      - traefik.docker.network=kong-net
 networks:
   default:
     external:
