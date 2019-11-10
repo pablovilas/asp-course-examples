@@ -10,14 +10,14 @@ Para instalar Kong vamos a utilizar Docker.
 Para utilizar Kong necesitamos instalar una DB la cual puede ser Postgres o Cassandra, en este ejemplo utilizaremos la segunda. Como la DB y Kong serán ejecutados en contenedores distintos entonces necesitamos crear una red para que pueda comunicarse entre si.
 
 ```bash
-docker network create kong-net
+docker network create asp-net
 ```
 
 #### Iniciar DB
 
 ```bash
 docker run -d --name kong-database \
-               --network=kong-net \
+               --network=asp-net \
                -p 9042:9042 \
                cassandra:3
 ```
@@ -26,7 +26,7 @@ Luego de tener la DB en ejecución debemos ejecutar las migraciones de datos nec
 
 ```bash
 docker run --rm \
-     --network=kong-net \
+     --network=asp-net \
      -e "KONG_DATABASE=cassandra" \
      -e "KONG_CASSANDRA_CONTACT_POINTS=kong-database" \
      kong:latest kong migrations bootstrap
@@ -40,7 +40,7 @@ Para iniciar Kong ejecutamos el siguiente comando:
 
 ```bash
 docker run --name kong \
-     --network=kong-net \
+     --network=asp-net \
      -e "KONG_DATABASE=cassandra" \
      -e "KONG_CASSANDRA_CONTACT_POINTS=kong-database" \
      -e "KONG_PROXY_ACCESS_LOG=/dev/stdout" \
@@ -64,7 +64,27 @@ Para obtener todos los servicios registrados ejecutamos el siguiente comando: ``
 
 #### Iniciar servicios
 
-Nos movemos a la carpeta ```services``` y ejecutamos el comando ```docker-compose up```. Esto va a iniciar los dos servicios de ejemplo.
+
+Nos movemos a la carpeta ```services``` y editamos el archivo ```docker-compose.yml``` de la siguiente manera:
+
+```yml
+version: '3'
+services:
+  order:
+    build: order-service/.
+    ports:
+      - "9000:9292"
+  product:
+    build: product-service/.
+    ports:
+      - "9001:9292"
+networks:
+  default:
+    external:
+      name: asp-net
+```
+
+luego ejecutamos el comando ```docker-compose up```. Esto va a iniciar los dos servicios de ejemplo.
 Verificar que los servicios quedan disponibles en:
 
 * http://localhost:9001/products
