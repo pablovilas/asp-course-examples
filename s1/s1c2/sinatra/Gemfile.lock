@@ -2,7 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     multi_json (1.13.1)
-    rack (1.6.11)
+    rack (1.6.12)
     rack-protection (1.5.5)
       rack
     sinatra (1.4.8)
