@@ -1,8 +1,7 @@
-
 FROM node:latest
 WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install
 COPY . .
-EXPOSE 8080
-ENTRYPOINT ["node", "index.js"]
+CMD ["node", "index.js"]
+EXPOSE 8000
