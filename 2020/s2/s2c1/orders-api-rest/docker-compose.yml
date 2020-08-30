@@ -16,10 +16,10 @@ services:
         environment:
             - MONGO_DATA_DIR=/data/db
             - MONGO_LOG_DIR=/dev/null
-        volumes:
-            - "./dockercompose/mongo/:/data/db"
         ports:
             - "27017:27017"
+        volumes:
+            - "./dockercompose/mongo/:/data/db"
         networks:
             - asp-network
 networks:
