@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+    node:
+        build: .
+        container_name: node
+        command: ["./wait-for-it.sh", "mongodb:27017", "--", "node", "index.js"]
+        ports:
+            - "8080:8080"
+        depends_on:
+            - mongodb
+        networks:
+            - asp-network
+    mongodb:
+        container_name: mongodb
+        image: mongo:latest
+        environment:
+            - MONGO_DATA_DIR=/data/db
+            - MONGO_LOG_DIR=/dev/null
+        volumes:
+            - "./dockercompose/mongo/:/data/db"
+        ports:
+            - "27017:27017"
+        networks:
+            - asp-network
+networks:
+    asp-network:
+        name: asp-network

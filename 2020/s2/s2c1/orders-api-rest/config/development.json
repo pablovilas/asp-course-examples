@@ -1,0 +1,13 @@
+{
+    "repository": {
+        "url": "mongodb://host.docker.internal:27017/db"
+    },
+    "middlewares": {
+        "xmlParser": {
+            "xmlOptions": {
+                "explicitRoot": false,
+                "explicitArray": false
+            }
+        }
+    }
+}
