@@ -7,7 +7,7 @@ Dockerizar una aplicación multi capa utilizando Docker y Docker Compose.
 
 ### Procedimiento
 
-Dockerizar el [api de ejemplo]([https://github.com/pablovilas/sa-course-examples/tree/master/c7/orders-api-rest). Puede clonar dicho repositorio.
+Dockerizar el [api de ejemplo](https://github.com/pablovilas/sa-course-examples/tree/master/c7/orders-api-rest). Puede clonar dicho repositorio.
 Para aumentar la velocidad del build, excluya archivos y directorios agregando un archivo `.dockerignore` en el directorio de la aplicación.
 
 *Ejemplo `.dockerignore` para Node.js:*
