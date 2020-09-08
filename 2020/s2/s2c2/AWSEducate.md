@@ -25,3 +25,7 @@ Este documento describe los pasos a seguir para crear un cuenta en AWS Educate.
 6. Completar el proceso verificando su casilla de correo y haciendo click en en enlace de verificación
 
 ![Paso 5](img/step-5.png)
+
+7. Una vez logueados en nuestra cuenta, ir a "AWS Account" en el menu superior, y elegir crear una cuenta nueva de AWS. Desde esa pagina podremos ingresar a "Vocareum" y a la consola de AWS
+
+8. Para obtener API Keys para AWS, en Vocareum debemos clickear "Account Details" y luego AWS CLI. Ese text debe ser copiado en el archivo `~/.aws/credentials`.
