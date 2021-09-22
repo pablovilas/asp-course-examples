@@ -1,0 +1,57 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <title>Load Image</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h2>Cache example</h2>
+    <div >
+      <img id="image-1" width="200" height="200">
+      <img id="image-2" width="200" height="200">
+    </div>
+    <div>
+      <img id="image-3" width="200" height="200">
+      <img id="image-4" width="200" height="200">
+    </div>
+    <div>
+      <p id="response-img-1">Loading Image 1...</p>
+      <p id="response-img-2">Loading Image 2...</p>
+      <p id="response-img-3">Loading Image 3...</p>
+      <p id="response-img-4">Loading Image 4...</p>
+    </div>
+</body>
+<script>
+  window.onload = function() {
+    let start = new Date().getTime();
+    let image1 = document.getElementById('image-1');
+    let image2 = document.getElementById('image-2');
+    let image3 = document.getElementById('image-3');
+    let image4 = document.getElementById('image-4');
+    image1.src = buildUrl("cache/1");
+    image2.src = buildUrl("no-cache/1");
+    image3.src = buildUrl("cache/2");
+    image4.src = buildUrl("no-cache/2");
+    image1.addEventListener('load', () => {
+      let end = new Date().getTime();
+      document.getElementById('response-img-1').innerHTML = `Image 1 Took ${(end - start)}ms (local cache)`;
+    });
+    image2.addEventListener('load', () => {
+      let end = new Date().getTime();
+      document.getElementById('response-img-2').innerHTML = `Image 2 Took ${(end - start)}ms (no cache)`;
+    });
+    image3.addEventListener('load', () => {
+      let end = new Date().getTime();
+      document.getElementById('response-img-3').innerHTML = `Image 3 Took ${(end - start)}ms (local cache)`;
+    });
+    image4.addEventListener('load', () => {
+      let end = new Date().getTime();
+      document.getElementById('response-img-4').innerHTML = `Image 4 Took ${(end - start)}ms (https://cache-example-asp.herokuapp.com/ (no cache), http://asp-ort.site (CDN + local cache)`;
+    });
+  }
+  function buildUrl(uri) {
+    return window.location.href + uri;
+  }
+</script>
+</html>
