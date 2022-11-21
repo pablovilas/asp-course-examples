@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fastify": "^3.21.1",
+    "fastify": "^3.29.4",
     "node-cron": "^3.0.0"
   }
 }
