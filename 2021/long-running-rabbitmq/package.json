@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "amqplib": "^0.8.0",
-    "fastify": "^3.21.1"
+    "fastify": "^3.29.4"
   }
 }
